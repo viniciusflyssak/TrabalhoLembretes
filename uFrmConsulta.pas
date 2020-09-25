@@ -1,5 +1,6 @@
 unit uFrmConsulta;
-
+
+
 interface
 
 uses
@@ -71,7 +72,6 @@ begin
   if LembreteDAO.Deletar(Lembrete) then
   begin
     ShowMessage('Registro Deletado com Sucesso!');
-    Close;
   end;
 end;
 
@@ -154,4 +154,4 @@ begin
 end;
 
 end.
-
+
