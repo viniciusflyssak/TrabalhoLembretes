@@ -1,0 +1,99 @@
+unit uLembrete;
+
+interface
+
+uses System.SysUtils;
+
+type
+  TLembrete = class
+  private
+    FIDPessoa: integer;
+    FTitulo: string;
+    FDescricao: string;
+    FData: TDateTime;
+    FHora: TDateTime;
+    constructor Create;
+
+    procedure setTitulo(Value: String);
+    procedure setDescricao(Value: String);
+    procedure setData(Value: TDateTime);
+    procedure setHora(Value: TDateTime);
+    procedure setIDLembrete(Value: integer);
+
+    function getTitulo: string;
+    function getDescricao: string;
+    function getData: TDateTime;
+    function getHora: TDateTime;
+    function getIDLembrete: integer;
+
+  public
+    property IDLembrete: integer read getIDLembrete write setIDLembrete;
+    property titulo: string read getTitulo write setTitulo;
+    property descricao: string read getDescricao write setDescricao;
+    property data: TDateTime read getData write setData;
+    property hora: TDateTime read getHora write setHora;
+  end;
+
+implementation
+
+{ TLembrete }
+
+constructor TLembrete.Create;
+begin
+  FIDPessoa := 0;
+  FTitulo := '';
+  FDescricao := '';
+  FData := EncodeDate(1900, 1, 1);
+end;
+
+function TLembrete.getData: TDateTime;
+begin
+  Result := FData;
+end;
+
+function TLembrete.getDescricao: string;
+begin
+  Result := FDescricao;
+end;
+
+function TLembrete.getHora: TDateTime;
+begin
+  Result := FHora;
+end;
+
+function TLembrete.getIDLembrete: integer;
+begin
+  Result := FIDPessoa;
+end;
+
+function TLembrete.getTitulo: string;
+begin
+  Result := FTitulo;
+end;
+
+procedure TLembrete.setData(Value: TDateTime);
+begin
+  FData := Value;
+end;
+
+procedure TLembrete.setDescricao(Value: String);
+begin
+  FDescricao := Value;
+end;
+
+procedure TLembrete.setHora(Value: TDateTime);
+begin
+  FHora := Value;
+end;
+
+procedure TLembrete.setIDLembrete(Value: integer);
+begin
+  FIDPessoa := Value;
+end;
+
+procedure TLembrete.setTitulo(Value: String);
+begin
+  FTitulo := Value;
+end;
+
+end.
