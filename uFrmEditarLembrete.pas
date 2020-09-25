@@ -1,5 +1,6 @@
 unit uFrmEditarLembrete;
-
+
+
 interface
 
 uses
@@ -85,8 +86,6 @@ begin
   Try
     if Assigned(LembreteDAO) then
       FreeAndNil(LembreteDAO);
-    if Assigned(Lembrete) then
-      FreeAndNil(Lembrete);
   except
     on e: Exception do
       raise Exception.Create(e.Message);
@@ -110,4 +109,4 @@ begin
 end;
 
 end.
-
+
